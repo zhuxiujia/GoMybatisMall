@@ -92,5 +92,5 @@ go mod download
 
 
 
-### 如果需要付费技术支持，欢迎联系
+### 如果需技术支持，欢迎联系(付费)
 ![Image text](https://zhuxiujia.github.io/gomybatis.io/assets/wx_account.jpg)
