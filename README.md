@@ -9,7 +9,19 @@ GoMybatis based  mall project
 * 适用于Java服务端开发者学习适用go项目（jvm开发者一般都是公司性质，注重扩展性和简单化，适用于习惯SSM组合的开发者，即SpringBoot,SpringMVC,Mybatis）
 * 非常适合需要快速敏捷业务开发的，执行异常快速，适合低功耗电脑（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
 
-### 设计
+### 谈特性
++ 秒启动（完成项目扫描,bean注入，总耗时小于1秒内）内存占用低于20MB
++ 集成 Swagger UI（go语言中唯一使用接口注解）和移动端前端沟通更便利~
++ 集成Excel报表导出（详见UserController.go）
++ 集成cron表达式，支持定时任务（详见OrderNotifyZfbSchedule.go）
++ 集成redis,RedisTemplete (详见StoreServiceImpl.go 中的使用)
++ 集成GoMybatis,(详见 core/com/example/dao/包中的使用)
++ 集成基本的商城业务，用户注册，后台用户，权限表，图形验证码
++ 集成基于statik静态文件打包
++ 集成gofastdfs分布式静态文件存储
++ 集成Docker容器化部署脚本
+
+### 谈设计
 + 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc LB-Service）拆分粒度为最大化（仅包含 一个网关和一个微服务，实际项目需要根据业务自己评估拆分）
 + 关于网关（自行设计controller 作为网关做鉴权，注意本项目作为案例未加入，但是可以把controller层视为网关）
 + 关于链路追踪（需要自行封装链路追踪，本项目基于rpc ，使用方式上没差别。注意本项目未加入）
@@ -20,9 +32,7 @@ GoMybatis based  mall project
 + gomybatis的xml里不出现任何的包名（得益于 设计之初 遵循单一职责原则和序列化方法定义在xml中和结构体tag中）似乎有点洁癖+强迫症，哈哈
 + 关于事务，已处理好core服务中嵌套事务传播行为
 
-+ 秒启动（完成项目扫描,bean注入，总耗时小于1秒内）
-+ 支持 Swagger UI（go语言中唯一使用接口注解）和移动端前端沟通更便利~
-### 架构:
+### 谈架构:
 * 必须的库
 + log（日志推荐使用golang官方（官方最稳定，其他库太重，本项目不赞成引入），仅写入到静态文件）
 + consul(服务发现，consul是支持spring cloud的go语言分布式服务发现) 
@@ -37,11 +47,11 @@ GoMybatis based  mall project
 + GoFastdfs(开源分布式文件存储,你也可以选择其他的例如 阿里云oss) 
 + statikFs(开源静态文件编译，用于打包外部配置文件，mapper xml文件 进程序（打包的本质是生成string全局变量模拟已打包的文件，如不适用，需要自行打包配置文件上传目录) 
 
-## 编译打包
+## 谈编译打包
 + DockerFile镜像打包(详情请查看 build_app.sh build_core.sh build_discover.sh)
 + jenkins打包（仅提供步骤脚本）
 
-### 目录结构 DDD（领域驱动设计）分层 介绍:
+### 谈目录结构 DDD（领域驱动设计）分层 介绍:
 + app/admin接口层,位于app/com/controller/目录下，也可以看做网关鉴权层（基于JWT token（使用BCryptPasswordEncoder同时兼容java和go）配合easy_mvc过滤器）
 + core/服务层,也是核心业务层
 + common 公共库（Domain model,Rpc model,DTO model,VO model）
@@ -50,17 +60,17 @@ GoMybatis based  mall project
 + database/dao数据库层
 + db/ 存放mysql表结构
 
-### 项目接口分层
+### 谈项目接口分层
 + app(提供app接口)
 + admin(后台接口)
 
-### 包管理
+### 谈包管理
 + mod (golang官方推荐)
 ### 安装依赖，win/mac os 命令行执行(前提，需要安装go环境，并且建议打开go mod 选项为auto，自行百度教程~)
 ```
 go mod download
 ```
-### 运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
+### 谈运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
 +  下载并且安装GoLand(https://www.jetbrains.com/go/) IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
 +  阅读readme.md文件
 +  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
