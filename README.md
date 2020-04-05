@@ -33,7 +33,7 @@ GoMybatis based  mall project
 
 ## 编译打包
 + DockerFile镜像打包
-+ jinkins自动打包（仅提供步骤脚本）
++ jenkins打包（仅提供步骤脚本）
 
 ### DDD（领域驱动设计）分层:
 + app/ app/admin接口层，也可以看做网关鉴权层（基于JWT token（使用BCryptPasswordEncoder同时兼容java和go）配合easy_mvc过滤器）
