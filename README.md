@@ -39,8 +39,8 @@ GoMybatis based  mall project
 + DockerFile镜像打包(详情请查看 build_app.sh build_core.sh build_discover.sh)
 + jenkins打包（仅提供步骤脚本）
 
-### DDD（领域驱动设计）分层:
-+ app/ app/admin接口层，也可以看做网关鉴权层（基于JWT token（使用BCryptPasswordEncoder同时兼容java和go）配合easy_mvc过滤器）
+### 目录结构 DDD（领域驱动设计）分层 介绍:
++ app/admin接口层,位于app/com/controller/目录下，也可以看做网关鉴权层（基于JWT token（使用BCryptPasswordEncoder同时兼容java和go）配合easy_mvc过滤器）
 + core/服务层,也是核心业务层
 + common 公共库（Domain model,Rpc model,DTO model,VO model）
 + consul/存放下载好的consul可执行文件
