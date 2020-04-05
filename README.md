@@ -68,3 +68,7 @@ go mod download
 * 快速结束开发，而且还保障高性能，保护渐渐消失的头发...
 * 不失原有java服务端的简洁性，同时享受golang的异步超高并发，超快编译速度，像python一样简单的特性吧...   别忘记喜欢的话 右上角点个赞
 
+
+
+### 如果需要付费技术支持，欢迎联系
+![Image text](https://zhuxiujia.github.io/gomybatis.io/assets/wx_account.jpg)
