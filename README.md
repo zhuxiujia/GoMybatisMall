@@ -72,7 +72,7 @@ GoMybatis based  mall project
 go mod download
 ```
 ### 谈运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
-+  下载并且安装GoLand(https://www.jetbrains.com/go/) IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
++  下载并且安装[GoLand](https://www.jetbrains.com/go/)   IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
 +  阅读readme.md文件
 +  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
 +  2打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
