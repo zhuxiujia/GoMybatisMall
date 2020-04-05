@@ -36,10 +36,11 @@ GoMybatis based  mall project
 + go mod (golang官方推荐)
 
 ### DDD（领域驱动设计）分层:
++ app/ app/admin接口层，也可以看做网关鉴权层（基于JWT token配合easy_mvc过滤器）
++ core/服务层,也是核心业务层
 + common 公共库（domain,rpc,vo）
 + consul/存放下载好的consul可执行文件
 + controller/网关层
-+ core/核心业务服务层(微服务)
 + database/dao数据库层
 + db/ 存放mysql表结构
 
