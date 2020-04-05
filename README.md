@@ -1,7 +1,7 @@
 # GoMybatisMall
 GoMybatis based  mall project
 
-基于GoMybatis的商城 微服务 项目
+基于 ![GoMybatis](https://github.com/zhuxiujia/GoMybatis) 的商城 微服务 项目
 
 注意：本项目架构拷贝自生产环境源码的改版，经过生产环境检验！
 
