@@ -18,6 +18,7 @@ GoMybatis based  mall project
 + 关于服务发现（本项目使用consul，也意味着支持spring cloud 调用基于本项目的集群）
 + 关于sql不推荐或极少使用join语句,外键，触发器，存储过程（一般不超过3条，且join的应该是同业务的表，禁止跨服务join），而是使用 查询后组合的方法（因为go查询并发执行，为分库分表做万全准备）
 + gomybatis的xml里不出现任何的包名（得益于 设计之初 遵循单一职责原则和序列化方法定义在xml中和结构体tag中）似乎有点洁癖+强迫症，哈哈
++ 关于事务，已处理好core服务中嵌套事务传播行为
 + 非依赖急速启动（完成项目扫描,bean注入，总耗时小于1秒内）
 + 原生支持 接口注解 Swagger UI ~ 和移动端前端沟通更便利~
 ### 架构:
@@ -66,8 +67,11 @@ go mod download
 +  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
 +  在这之后，可以在consul后台(http://127.0.0.1:8500/)查看到启动的微服务
 ![Image text](consul_img.png)
-+  现在也可以访问接口 例如打开  http://127.0.0.1:8000/
-
++  现在也可以访问接口地址  http://127.0.0.1:8000/
++  例如访问验证码接口 http://127.0.0.1:8000/api/captcha  即可返回
+```json
+{"code":-1,"msg":"手机号不能空！","data":null}
+```
 
 
 ### 最后
