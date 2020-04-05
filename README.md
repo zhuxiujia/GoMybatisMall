@@ -65,7 +65,7 @@ go mod download
 +  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
 +  2打开app/main/App.go 找到main方法 点击绿色按钮执行，或者 go run App.go
 +  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
-+  在这之后，可以在consul后台(http://127.0.0.1:8500/)查看到启动的微服务
++  在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
 ![Image text](consul_img.png)
 +  现在也可以访问接口地址  http://127.0.0.1:8000/
 +  例如访问验证码接口 http://127.0.0.1:8000/api/captcha  即可返回
