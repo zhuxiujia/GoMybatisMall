@@ -1,0 +1,20 @@
+2019-05-22 02:49:51 [INF] [fileserver.go:3644] [main.init.0] succes init log access
+2019-05-22 02:49:51 [INF] [fileserver.go:528] [main.ParseConfig] {:8080 [http://192.168.28.105:8080] group1 false true 1800 true  true [] [] default {abc@163.com abc smtp.163.com:25}  false 600 0 true http://192.168.28.105:8080 md5 0 false [127.0.0.1] false false true false true false  false true}
+2019-05-22 02:49:51 [INF] [fileserver.go:530] [main.ParseConfig] config parse success
+2019-05-22 02:50:50 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/02/50/0/微信图片_20190512140537.jpg
+2019-05-22 02:53:02 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/02/53/0/微信图片_20190512140537.jpg
+2019-05-22 02:53:22 [INF] [fileserver.go:1532] [main.(*Server).Download] download:/group1/default/20190522/02/50/0/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190512140537.jpg
+2019-05-22 02:59:14 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/02/59/0/微信图片_20190512140537.jpg
+2019-05-22 02:59:59 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/02/59/0/微信图片_20190512140537.jpg
+2019-05-22 03:00:39 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/00/0/微信图片_20190512140537.jpg
+2019-05-22 03:01:43 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/01/0/微信图片_20190512140537.jpg
+2019-05-22 03:01:51 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/01/0/微信图片_20190512140537.jpg
+2019-05-22 03:02:14 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/02/0/微信图片_20190512140537.jpg
+2019-05-22 03:02:59 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/02/0/微信图片_20190512140537.jpg
+2019-05-22 03:03:06 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/03/0/微信图片_20190512140537.jpg
+2019-05-22 03:03:12 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/03/0/微信图片_20190512140537.jpg
+2019-05-22 03:03:33 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/03/0/微信图片_20190512140537.jpg
+2019-05-22 03:05:39 [INF] [fileserver.go:2379] [main.(*Server).SaveUploadFile] upload: files/default/20190522/03/05/0/微信图片_20190512140537.jpg
+2019-06-13 03:31:59 [INF] [fileserver.go:3644] [main.init.0] succes init log access
+2019-06-13 03:31:59 [INF] [fileserver.go:528] [main.ParseConfig] {:8080 [http://192.168.28.105:8080] group1 false true 1800 true  true [] [] default {abc@163.com abc smtp.163.com:25}  false 600 0 true http://192.168.28.105:8080 md5 0 false [127.0.0.1] false false true false true false  false true}
+2019-06-13 03:31:59 [INF] [fileserver.go:530] [main.ParseConfig] config parse success
