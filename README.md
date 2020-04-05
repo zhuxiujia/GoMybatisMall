@@ -75,7 +75,12 @@ go mod download
 +  下载并且安装GoLand(https://www.jetbrains.com/go/) IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
 +  阅读readme.md文件
 +  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
-+  2打开app/main/App.go 找到main方法 点击绿色按钮执行，或者 go run App.go
++  2打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
+```go
+2020/04/06 02:32:34 [easy_mvc] swagger ui yaml config on :http://127.0.0.1:8000/doc
+2020/04/06 02:32:34 [easy_mvc] swagger ui web start on :http://127.0.0.1:8000/swagger
+```
+![Image text](swagger.png)
 +  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
 +  在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
 ![Image text](consul_img.png)
