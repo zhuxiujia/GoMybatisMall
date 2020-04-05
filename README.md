@@ -31,15 +31,15 @@ GoMybatis based  mall project
 + jinkins自动打包（仅提供步骤脚本）
 
 ### 包管理
-go mod (golang官方推荐)
++ go mod (golang官方推荐)
 
 ### DDD（领域驱动设计）分层:
-common 公共库（domain,rpc,vo）
-consul/存放下载好的consul可执行文件
-controller/网关层
-core/核心业务服务层(微服务)
-database/dao数据库层
-db/ 存放mysql表结构
++ common 公共库（domain,rpc,vo）
++ consul/存放下载好的consul可执行文件
++ controller/网关层
++ core/核心业务服务层(微服务)
++ database/dao数据库层
++ db/ 存放mysql表结构
 
 ### 项目接口分层
 + app(提供app接口)
