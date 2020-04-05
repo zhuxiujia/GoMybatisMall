@@ -1,7 +1,7 @@
 # GoMybatisMall
 GoMybatis based  mall project
 
-基于 ![GoMybatis](https://github.com/zhuxiujia/GoMybatis) 的 微服务商城，唯一一款符合企业开发规范，又满足高并发性能的 示例项目
+基于 ![GoMybatis](https://github.com/zhuxiujia/GoMybatis) 的 微服务商城，国内唯一一款满足使用spring一般企业开发规范，满足高并发，微服务项目
 
 注意：本项目架构拷贝自生产环境源码的改版，经过生产环境检验！
 
