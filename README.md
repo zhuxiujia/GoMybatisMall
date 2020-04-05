@@ -9,7 +9,7 @@ GoMybatis based  mall project
 * 适用于Java服务端开发者学习适用go项目（jvm开发者一般都是公司性质，注重扩展性和简单化，适用于习惯SSM组合的开发者，即SpringBoot,SpringMVC,Mybatis）
 
 ### 设计
-+ 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc-Service）
++ 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc LB-Service）
 + 关于网关（自行设计controller 作为网关做鉴权，注意本项目作为案例未加入，但是可以把controller层视为网关）
 + 关于链路追踪（需要自行封装链路追踪，本项目基于rpc ，使用方式上没差别。注意本项目未加入）
 + 关于熔断（需要自行封装熔断，本项目基于rpc ，使用方式上没差别。注意本项目未加入）
