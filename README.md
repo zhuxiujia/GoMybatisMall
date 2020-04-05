@@ -31,8 +31,8 @@ GoMybatis based  mall project
 + redis
 
 * 可选的库
-+ GoFastdfs(分布式文件存储-引用其他作者的,你也可以选择其他的例如 阿里云oss) 
-+ statikFs(静态文件编译，用于打包外部配置文件，mapper xml文件 进程序（打包的本质是生成string全局变量模拟已打包的文件，如不适用，需要自行打包配置文件上传目录) 
++ GoFastdfs(开源分布式文件存储,你也可以选择其他的例如 阿里云oss) 
++ statikFs(开源静态文件编译，用于打包外部配置文件，mapper xml文件 进程序（打包的本质是生成string全局变量模拟已打包的文件，如不适用，需要自行打包配置文件上传目录) 
 
 ## 编译打包
 + DockerFile镜像打包
