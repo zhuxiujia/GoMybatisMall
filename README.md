@@ -47,7 +47,7 @@ GoMybatis based  mall project
 
 ### 包管理
 + mod (golang官方推荐)
-### 安装依赖
+### 安装依赖，win/mac os 命令行执行(前提，需要安装go环境，并且建议打开go mod 选项为auto，自行百度教程~)
 ```
 go mod download
 ```
