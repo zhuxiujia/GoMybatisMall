@@ -10,7 +10,7 @@ GoMybatis based  mall project
 * 非常适合需要快速敏捷业务开发的，执行异常快速，适合低功耗电脑（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
 * 始于Spring ，终将归于Go  敏捷开发之时，大道至简
 
-### 谈特性
+### 谈特性（足以应付大部分互联网服务端应用）
 + 秒启动（完成项目扫描,bean注入，总耗时小于1秒内）内存占用低于20MB
 + 集成 Swagger UI（go语言中唯一使用接口注解）和移动端前端沟通更便利~
 + 集成Excel报表导出（详见UserController.go）
