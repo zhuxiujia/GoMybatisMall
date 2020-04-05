@@ -51,6 +51,11 @@ GoMybatis based  mall project
 ```
 go mod download
 ```
+### 运行和debug
++  下载安装GoLand(https://www.jetbrains.com/go/) 自行激活
++  阅读readme.md文件，打开对应的.go文件，点击绿色按钮启动。或者使用go run xxxx.go 命令启动
+
+
 
 
 
