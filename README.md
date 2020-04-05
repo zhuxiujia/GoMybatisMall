@@ -1,9 +1,10 @@
 # GoMybatisMall
 GoMybatis based  mall project
 
+基于GoMybatis的商城 微服务 项目
+
 注意：本项目架构拷贝自生产环境源码的改版，经过生产环境检验！
 
-基于GoMybatis的商城 微服务 项目
 * 适用于给 初学GoMybatis开发者作为 示例或参考用或者快速开发一个GoMybatis项目.
 * 适用于Java服务端开发者学习适用go项目（jvm开发者一般都是公司性质，注重扩展性和简单化，适用于习惯SSM组合的开发者，即SpringBoot,SpringMVC,Mybatis）
 
