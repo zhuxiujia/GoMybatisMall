@@ -31,7 +31,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 func Init(appConfig app_context.AppConfig) {
 	//init log
 	var out = utils.NewOutPut("mnt/log/" + appConfig.ClientName + "/all.log")
-	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 	log.SetOutput(out)
 
 	app_context.Context.Provide(&inject.Object{

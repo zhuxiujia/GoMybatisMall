@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_mall_specification">
+        <id column="id" property="id"/>
+        <result column="sku_id" property="sku_id" langType="string"/>
+        <result column="name" property="name" langType="string"/>
+        <result column="version" property="version" langType="int" version_enable="true"/>
+        <result column="create_time" property="create_time" langType="Time"/>
+        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+                logic_deleted="0"/>
+    </resultMap>
+    <insertTemplete></insertTemplete>
+    <updateTemplete wheres="id=#{id}"></updateTemplete>
+    <deleteTemplete wheres="id=#{id}"></deleteTemplete>
+    <deleteTemplete id="DeleteBySkuId" wheres="sku_id=#{sku_id}"></deleteTemplete>
+    <deleteTemplete id="DeleteBySkuIdAndName" wheres="sku_id=#{sku_id},name=#{name}"></deleteTemplete>
+    <selectTemplete  wheres="id=#{id}" ></selectTemplete>
+
+    <select id="SelectByIds">
+        SELECT * FROM biz_mall_specification WHERE delete_flag = 1 AND id in
+        <foreach collection="ids" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+    <select id="SelectBySkuIds">
+        SELECT * FROM biz_mall_specification WHERE delete_flag = 1 AND sku_id in
+        <foreach collection="sku_ids" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

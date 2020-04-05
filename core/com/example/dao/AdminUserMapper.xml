@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_admin_user">
+        <id column="id" property="id"/>
+        <result column="phone" property="phone" langType="string"/>
+        <result column="pwd" property="pwd" langType="string"/>
+        <result column="enable" property="enable" langType="int"/>
+
+        <result column="real_name" property="real_name" langType="string"/>
+        <result column="remark" property="remark" langType="string"/>
+        <result column="role_ids" property="role_ids" langType="string" />
+
+        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+                logic_deleted="0"/>
+        <result column="create_time" property="create_time" langType="Time"/>
+        <result column="version" property="version" langType="int" version_enable="true"/>
+    </resultMap>
+
+    <insertTemplete></insertTemplete>
+    <updateTemplete wheres="id=#{id}"></updateTemplete>
+    <deleteTemplete wheres="id=#{id}"></deleteTemplete>
+    <selectTemplete wheres="id=#{id}"></selectTemplete>
+    <selectTemplete id="SelectByPhone" wheres="phone=#{phone} limit 1"></selectTemplete>
+
+    <selectTemplete id="selectPageTemplete" wheres="phone != ''?phone like #{'%'+phone+'%'},enable != nil? enable = #{enable}"> order by create_time desc limit #{page},#{size}</selectTemplete>
+    <selectTemplete id="selectCountTemplete" columns="count(1)" wheres="phone != ''?phone like #{'%'+phone+'%'},enable != nil? enable = #{enable}"/>
+
+</mapper>

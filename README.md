@@ -36,7 +36,7 @@ GoMybatis based  mall project
 + statikFs(开源静态文件编译，用于打包外部配置文件，mapper xml文件 进程序（打包的本质是生成string全局变量模拟已打包的文件，如不适用，需要自行打包配置文件上传目录) 
 
 ## 编译打包
-+ DockerFile镜像打包
++ DockerFile镜像打包(详情请查看 build_app.sh build_core.sh build_discover.sh)
 + jenkins打包（仅提供步骤脚本）
 
 ### DDD（领域驱动设计）分层:
@@ -59,8 +59,14 @@ GoMybatis based  mall project
 go mod download
 ```
 ### 运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
-+  下载安装GoLand(https://www.jetbrains.com/go/) 自行激活(智能提示比vscode好，已经是你能找到的最佳IDE了)
-+  阅读readme.md文件，打开对应的.go文件，点击绿色按钮启动。或者使用go run xxxx.go 命令启动
++  下载并且安装GoLand(https://www.jetbrains.com/go/) IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
++  阅读readme.md文件
++  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
++  2打开app/main/App.go 找到main方法 点击绿色按钮执行，或者 go run App.go
++  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
++  在这之后，可以在consul后台(http://127.0.0.1:8500/)查看到启动的微服务
+![Image text](consul_img.png)
++  现在也可以访问接口 例如打开  http://127.0.0.1:8000/
 
 
 

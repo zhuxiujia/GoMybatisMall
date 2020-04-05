@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_mall_sku">
+        <id column="id" property="id"/>
+        <result column="class_name" property="class_name" langType="string"/>
+        <result column="title" property="title" langType="string"/>
+        <result column="second_title" property="second_title" langType="string"/>
+        <result column="content" property="content" langType="string"/>
+        <result column="total_num" property="total_num" langType="int"/>
+        <result column="remain_num" property="remain_num" langType="int"/>
+        <result column="shop_amount" property="shop_amount" langType="int"/>
+        <result column="amount" property="amount" langType="int"/>
+        <result column="order_time_limit" property="order_time_limit" langType="int"/>
+        <result column="tag1" property="tag1" langType="string"/>
+        <result column="tag2" property="tag2" langType="string"/>
+        <result column="tag3" property="tag3" langType="string"/>
+
+        <result column="status" property="status" langType="int"/>
+        <result column="version" property="version" langType="int" version_enable="true"/>
+        <result column="create_time" property="create_time" langType="Time"/>
+        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+                logic_deleted="0"/>
+    </resultMap>
+    <insertTemplete></insertTemplete>
+    <updateTemplete wheres="id=#{id}"></updateTemplete>
+    <deleteTemplete wheres="id=#{id}"></deleteTemplete>
+    <selectTemplete wheres="id=#{id}"></selectTemplete>
+
+    <select id="SelectByIds">
+        SELECT * FROM biz_mall_sku WHERE delete_flag = 1 AND id in
+        <foreach collection="ids" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="SelectByCondition" >
+        SELECT * FROM biz_mall_sku WHERE delete_flag = 1
+        <if test="title != ''">
+            AND `title` like #{title+'%'}
+        </if>
+        <if test="status != nil">
+            AND `status` = #{status}
+        </if>
+        <if test="tag1 != ''">
+            AND tag1 = #{tag1}
+        </if>
+        <if test="tag2 != ''">
+            AND tag2 = #{tag2}
+        </if>
+        <if test="tag3 != ''">
+            AND tag3 = #{tag3}
+        </if>
+        <if test="class_name != ''">
+            AND class_name = #{class_name}
+        </if>
+        <if test="min_amount != nil">
+            AND amount >= #{min_amount}
+        </if>
+        <if test="max_amount != nil">
+            <![CDATA[ AND amount < #{max_amount} ]]>
+        </if>
+        <if test="sort != '' and order_by != ''">
+            order by ${order_by} ${sort}
+        </if>
+        <if test="page != nil and size != nil">
+            LIMIT #{arg.Pageable.Page},#{arg.Pageable.PageSize}
+        </if>
+    </select>
+
+    <select id="CountByCondition">
+        SELECT count(1) FROM biz_mall_sku WHERE delete_flag = 1
+        <if test="title != ''">
+            AND `title` like #{title+'%'}
+        </if>
+        <if test="status != nil">
+            AND `status` = #{status}
+        </if>
+        <if test="tag1 != ''">
+            AND tag1 = #{tag1}
+        </if>
+        <if test="tag2 != ''">
+            AND tag2 = #{tag2}
+        </if>
+        <if test="tag3 != ''">
+            AND tag3 = #{tag3}
+        </if>
+        <if test="class_name != ''">
+            AND class_name = #{class_name}
+        </if>
+        <if test="min_amount != nil">
+            AND amount >= #{min_amount}
+        </if>
+        <if test="max_amount != nil">
+            <![CDATA[ AND amount < #{max_amount} ]]>
+        </if>
+    </select>
+
+</mapper>

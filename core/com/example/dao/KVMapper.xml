@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_kv">
+        <id column="id" property="id"/>
+        <result column="value" property="value" langType="string"/>
+        <result column="remark" property="remark" langType="string"/>
+        <result column="create_time" property="create_time" langType="time.Time"/>
+    </resultMap>
+
+    <insertTemplete></insertTemplete>
+    <updateTemplete wheres="id = #{id}"></updateTemplete>
+    <selectTemplete wheres="id = #{id}"></selectTemplete>
+    <selectTemplete id="selectIdLike" wheres="id like #{id+'%'}"></selectTemplete>
+    <deleteTemplete  wheres="id = #{id}"></deleteTemplete>
+
+    <select id="SelectByIds">
+        select * from biz_kv where  id in
+        <foreach collection="ids" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+
+    <selectTemplete id="SelectPageTemplete" wheres="id!=''?id like #{id+'%'},remark!=''?remark like #{remark+'%'}">order by create_time desc limit #{page},#{size}</selectTemplete>
+    <selectTemplete id="SelectCountTemplete" columns="count(1)" wheres="id!=''?id like #{id+'%'},remark!=''?remark like #{remark+'%'}"/>
+
+
+</mapper>

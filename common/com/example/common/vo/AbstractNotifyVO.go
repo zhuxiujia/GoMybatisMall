@@ -1,6 +1,6 @@
 package vo
 
-import "gitee.com/gascard/gas_server/common/com/gas/common/enum"
+import "github.com/zhuxiujia/GoMybatisMall/common/com/example/common/enum"
 
 //抽象订单对象，代替支付宝和微信等的支付对象
 type AbstractNotifyVO struct {

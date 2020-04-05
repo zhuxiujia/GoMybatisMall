@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_mall_order">
+        <id column="id" property="id"/>
+        <result column="user_id" property="user_id" langType="string"/>
+        <result column="receive_name" property="receive_name" langType="string"/>
+        <result column="receive_phone" property="receive_phone" langType="string"/>
+        <result column="receive_address" property="receive_address" langType="string"/>
+        <result column="sku_id" property="sku_id" langType="string"/>
+        <result column="sku_num" property="sku_num" langType="int"/>
+        <result column="sku_specification_id" property="sku_specification_id" langType="string"/>
+        <result column="express_num" property="express_num" langType="string"/>
+        <result column="express_name" property="express_name" langType="string"/>
+        <result column="order_amount" property="order_amount" langType="int"/>
+        <result column="status" property="status" langType="int"/>
+        <result column="pay_link" property="pay_link" langType="string"/>
+        <result column="pay_type" property="pay_type" langType="string"/>
+        <result column="remark" property="remark" langType="string"/>
+
+        <result column="version" property="version" langType="int" version_enable="true"/>
+        <result column="create_time" property="create_time" langType="Time"/>
+        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+                logic_deleted="0"/>
+    </resultMap>
+    <insertTemplete></insertTemplete>
+    <updateTemplete wheres="id=#{id}"></updateTemplete>
+    <deleteTemplete wheres="id=#{id}"></deleteTemplete>
+    <selectTemplete wheres="id=#{id}"></selectTemplete>
+
+    <select id="selectByCondition">
+        SELECT * FROM biz_mall_order WHERE delete_flag = 1
+        <if test="fuzzy != null">
+            AND (receive_name like concat('%',#{fuzzy},'%')
+            OR receive_phone like concat('%',#{fuzzy},'%')
+            OR receive_address like concat('%',#{fuzzy},'%'))
+        </if>
+        <if test="sku_id != ''">
+            AND sku_id = #{sku_id}
+        </if>
+        <if test="user_id != ''">
+            AND user_id = #{user_id}
+        </if>
+        <if test="status != nil">
+            AND status = #{status}
+        </if>
+        <if test="start_time != nil">
+            AND create_time >= #{start_time}
+        </if>
+        <if test="end_time != nil">
+            AND create_time &lt;= #{end_time}
+        </if>
+        ORDER BY create_time DESC
+        <if test="page != nil and size != nil">
+            LIMIT #{arg.Pageable.Page},#{arg.Pageable.PageSize}
+        </if>
+    </select>
+
+    <select id="countByCondition" resultType="java.lang.Integer">
+        SELECT count(1) FROM biz_mall_order WHERE delete_flag = 1
+        <if test="fuzzy != null">
+            AND (receive_name like concat('%',#{fuzzy},'%')
+            OR receive_phone like concat('%',#{fuzzy},'%')
+            OR receive_address like concat('%',#{fuzzy},'%'))
+        </if>
+        <if test="sku_id != ''">
+            AND sku_id = #{sku_id}
+        </if>
+        <if test="user_id != ''">
+            AND user_id = #{user_id}
+        </if>
+        <if test="status != nil">
+            AND status = #{status}
+        </if>
+        <if test="start_time != nil">
+            AND create_time >= #{start_time}
+        </if>
+        <if test="end_time != nil">
+            AND create_time &lt;= #{end_time}
+        </if>
+    </select>
+    <select id="CountByUserIdAndIntegralProductId">
+        SELECT COUNT(1) FROM biz_mall_order WHERE delete_flag = 1
+        <if test="user_id != ''">
+            AND user_id = #{user_id}
+        </if>
+        <if test="sku_id != ''">
+            AND sku_id = #{sku_id}
+        </if>
+        <if test="status != nil">
+            AND `status` != #{status}
+        </if>
+    </select>
+</mapper>

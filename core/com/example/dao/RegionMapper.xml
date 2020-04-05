@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+
+
+    <select id="SelectRegion">
+        SELECT * FROM region_province
+        right join region_city on region_province.province_id = region_city.province_id
+        right join region_area on region_city.city_id = region_area.city_id
+        <where>
+            <if test="province_id!=''">
+                and region_province.province_id = #{province_id}
+            </if>
+            <if test="province_id!=''">
+                and region_city.city_id = #{province_id}
+            </if>
+            <if test="area_id!=''">
+                and region_area.area_id = #{area_id}
+            </if>
+        </where>
+    </select>
+
+    <select id="SelectRegionProvince">
+        SELECT * FROM region_province
+    </select>
+    <select id="SelectRegionCity">
+        SELECT * FROM region_city;
+    </select>
+    <select id="SelectRegionArea">
+        SELECT * FROM region_area;
+    </select>
+</mapper>

@@ -22,6 +22,7 @@ var MallOrderService service.MallOrderService
 var MallSkuService service.MallSkuService
 var MallSpecificationService service.MallSpecificationService
 var AuthRoleService service.AuthRoleService
+var PayService service.PayService
 
 func init() {
 	ReflectRegisterService(&StoreService)
@@ -37,6 +38,7 @@ func init() {
 	ReflectRegisterService(&MallSkuService)
 	ReflectRegisterService(&MallSpecificationService)
 	ReflectRegisterService(&AuthRoleService)
+	ReflectRegisterService(&PayService)
 }
 
 func ReflectRegisterService(server interface{}) {

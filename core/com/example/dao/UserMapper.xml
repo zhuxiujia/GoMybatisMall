@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <!--logic_enable 逻辑删除字段-->
+    <!--logic_deleted 逻辑删除已删除字段-->
+    <!--logic_undelete 逻辑删除 未删除字段-->
+    <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
+    <resultMap id="BaseResultMap" tables="biz_user">
+        <id column="id" property="id"/>
+        <result column="phone" property="phone" langType="string"/>
+        <result column="password" property="password" langType="string"/>
+        <result column="realname" property="realname" langType="string"/>
+        <result column="invitation_code" property="invitation_code" langType="string"/>
+        <result column="ghost" property="ghost" langType="int"/>
+        <result column="today_sign_in" property="today_sign_in" langType="int"/>
+        <result column="client_type" property="client_type" langType="int"/>
+        <result column="address" property="address" langType="string"/>
+        <result column="def_address_id" property="def_address_id" langType="string"/>
+        <result column="avatar" property="avatar" langType="string"/>
+
+        <result column="channel" property="channel" langType="string"/>
+        <result column="inviter_code" property="inviter_code" langType="string"/>
+
+        <result column="version" property="version" langType="int" version_enable="true"/>
+        <result column="create_time" property="create_time" langType="time.Time"/>
+        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+                logic_deleted="0"/>
+    </resultMap>
+
+    <insertTemplete/>
+    <selectTemplete id="SelectById" wheres="id = #{id}"></selectTemplete>
+    <select id="SelectByIds" >
+        select * from biz_user where delete_flag = 1
+        <foreach collection="ids" item="item" open=" and id in (" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+
+    <selectTemplete id="selectByPhone" wheres="phone = #{phone} limit 1"></selectTemplete>
+
+    <select id="SelectByPhones">
+        select * from biz_user
+        where delete_flag = 1 and phone in
+        <foreach collection="phones" item="item" open="(" close=")" separator=",">
+           #{item}
+        </foreach>
+    </select>
+
+
+    <updateTemplete wheres="id = #{id}"></updateTemplete>
+
+    <selectTemplete id="SelectByInvitationCode" wheres="invitation_code = #{inviter_code}"></selectTemplete>
+
+
+
+    <selectTemplete id="selectPageTemplete" wheres="id!=''?id=#{id},phone != ''?phone like #{phone+'%'},realname != ''?realname = #{realname},invitation_code != ''?invitation_code = #{invitation_code},inviter_code != ''?inviter_code = #{inviter_code},channel!=''?channel = #{channel}">
+        <if test="time_start!=nil">
+            and create_time >= #{time_start}
+        </if>
+        <if test="time_end!=nil">
+            and create_time &lt;= #{time_end}
+        </if>
+        order by create_time desc limit #{arg.Pageable.Page},#{arg.Pageable.PageSize}</selectTemplete>
+    <selectTemplete id="selectCountTemplete" columns="count(1)" wheres="id!=''?id=#{id},phone != ''?phone like #{phone+'%'},realname != ''?realname = #{realname},invitation_code != ''?invitation_code = #{invitation_code},inviter_code != ''?inviter_code = #{inviter_code},channel!=''?channel = #{channel}">
+        <if test="time_start!=nil">
+            and create_time >= #{time_start}
+        </if>
+        <if test="time_end!=nil">
+            and create_time &lt;= #{time_end}
+        </if>
+    </selectTemplete>
+
+</mapper>
