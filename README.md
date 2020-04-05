@@ -32,9 +32,6 @@ GoMybatis based  mall project
 + DockerFile镜像打包
 + jinkins自动打包（仅提供步骤脚本）
 
-### 包管理
-+ mod (golang官方推荐)
-
 ### DDD（领域驱动设计）分层:
 + app/ app/admin接口层，也可以看做网关鉴权层（基于JWT token（使用BCryptPasswordEncoder同时兼容java和go）配合easy_mvc过滤器）
 + core/服务层,也是核心业务层
@@ -47,6 +44,13 @@ GoMybatis based  mall project
 ### 项目接口分层
 + app(提供app接口)
 + admin(后台接口)
+
+### 包管理
++ mod (golang官方推荐)
+### 安装依赖
+```
+go mod download
+```
 
 
 
