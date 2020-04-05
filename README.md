@@ -3,7 +3,7 @@ GoMybatis based  mall project
 
 注意：本项目架构拷贝自生产环境源码的改版，经过生产环境检验！
 
-基于GoMybatis的商城 微服务 项目，用于给 初学GoMybatis开发者作为 示例或参考用.
+基于GoMybatis的商城 微服务 项目，用于给 初学GoMybatis开发者作为 示例或参考用或者快速开发一个GoMybatis项目.
 
 
 ### 设计
