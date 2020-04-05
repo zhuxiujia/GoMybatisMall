@@ -38,7 +38,7 @@ GoMybatis based  mall project
 ### DDD（领域驱动设计）分层:
 + app/ app/admin接口层，也可以看做网关鉴权层（基于JWT token配合easy_mvc过滤器）
 + core/服务层,也是核心业务层
-+ common 公共库（domain,rpc,vo）
++ common 公共库（Domain model,Rpc model,VO model）
 + consul/存放下载好的consul可执行文件
 + controller/网关层
 + database/dao数据库层
