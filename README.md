@@ -19,7 +19,7 @@ GoMybatis based  mall project
 + 集成基本的商城业务，用户注册，后台用户，权限表，图形验证码
 + 集成基于statik静态文件打包
 + 集成gofastdfs分布式静态文件存储
-+ 集成Docker容器化部署脚本
++ 集成Docker容器化部署脚本，和执行脚本
 
 ### 谈设计
 + 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc LB-Service）拆分粒度为最大化（仅包含 一个网关和一个微服务，实际项目需要根据业务自己评估拆分）
