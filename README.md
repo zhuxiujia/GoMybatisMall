@@ -37,9 +37,9 @@ GoMybatis based  mall project
 * 必须的库
 + log（日志推荐使用golang官方（官方最稳定，其他库太重，本项目不赞成引入），仅写入到静态文件）
 + consul(服务发现，consul是支持spring cloud的go语言分布式服务发现) 
-+ easy_mvc(https://github.com/zhuxiujia/easy_mvc) （拟mvc设计）
-+ easyrpc(https://github.com/zhuxiujia/easyrpc) （封装定义,支持事务传播，基于go官方rpc库封装，兼容性也好）
-+ easyrpc_discovery(https://github.com/zhuxiujia/easyrpc_discovery) （微服务发现）
++ [easy_mvc](https://github.com/zhuxiujia/easy_mvc) （拟mvc设计）
++ [easyrpc](https://github.com/zhuxiujia/easyrpc) （封装定义,支持事务传播，基于go官方rpc库封装，兼容性也好）
++ [easyrpc_discovery](https://github.com/zhuxiujia/easyrpc_discovery) （微服务发现）
 + GoMybatis 
 + Mysql5.7
 + redis
