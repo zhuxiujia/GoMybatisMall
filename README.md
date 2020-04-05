@@ -10,7 +10,7 @@ GoMybatis based  mall project
 * 非常适合需要快速敏捷业务开发的，执行异常快速，非常适合低功耗电脑性能低的（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
 
 ### 设计
-+ 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc LB-Service）粒度为最大化（仅区分 网关和单一一个服务）
++ 本项目使用基本的微服务设计（Controller-Service Discovery-Rpc LB-Service）拆分粒度为最大化（仅包含 一个网关和一个微服务，实际项目需要根据业务自己评估拆分）
 + 关于网关（自行设计controller 作为网关做鉴权，注意本项目作为案例未加入，但是可以把controller层视为网关）
 + 关于链路追踪（需要自行封装链路追踪，本项目基于rpc ，使用方式上没差别。注意本项目未加入）
 + 关于熔断（需要自行封装熔断，本项目基于rpc ，使用方式上没差别。注意本项目未加入）
