@@ -73,16 +73,16 @@ go mod download
 ```
 ### 谈运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
 +  下载并且安装[GoLand](https://www.jetbrains.com/go/)   IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
-+  阅读readme.md文件
-+  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
-+  2打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
++  0 使用GoLand git clone 项目，阅读里面的readme.md文件
++  1 打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
++  2 打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
 ```go
 2020/04/06 02:32:34 [easy_mvc] swagger ui yaml config on :http://127.0.0.1:8000/doc
 2020/04/06 02:32:34 [easy_mvc] swagger ui web start on :http://127.0.0.1:8000/swagger
 ```
 ![Image text](swagger.png)
-+  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
-+  在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
++  3 打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
++  4 在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
 ![Image text](consul_img.png)
 +  现在也可以访问接口地址  http://127.0.0.1:8000/
 +  例如访问验证码接口 http://127.0.0.1:8000/api/captcha  即可返回
