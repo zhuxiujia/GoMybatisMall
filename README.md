@@ -17,6 +17,7 @@ GoMybatis based  mall project
 + 关于服务发现（本项目使用consul，也意味着支持spring cloud 调用基于本项目的集群）
 + sql不推荐或极少使用join语句（一般不超过3条，且join的应该是同业务的表，禁止跨服务join），而是使用 查询后组合的方法（因为go查询并发执行，为分库分表做万全准备）
 + gomybatis的xml里不出现任何的包名（得益于 设计之初 遵循单一职责原则和序列化方法定义在xml中和结构体tag中）似乎有点洁癖+强迫症，哈哈
++ 非依赖急速启动（完成项目扫描,bean注入，总耗时小于1秒内），（无需等待其他服务启动，而不是说，服务发现不存在直接让服务挂了 启动不了）
 ### 架构:
 * 必须的库
 + log（日志推荐使用golang官方（官方最稳定，其他库太重，本项目不赞成引入），仅写入到静态文件）
@@ -55,7 +56,7 @@ GoMybatis based  mall project
 ```
 go mod download
 ```
-### 运行和debug
+### 运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
 +  下载安装GoLand(https://www.jetbrains.com/go/) 自行激活(智能提示比vscode好，已经是你能找到的最佳IDE了)
 +  阅读readme.md文件，打开对应的.go文件，点击绿色按钮启动。或者使用go run xxxx.go 命令启动
 
