@@ -8,7 +8,7 @@ GoMybatis based  mall project
 * 适用于给 初学GoMybatis开发者作为 示例或参考用或者快速开发一个GoMybatis项目.
 * 适用于Java服务端开发者学习适用go项目（jvm开发者一般都是公司性质，注重扩展性和简单化，适用于习惯SSM组合的开发者，即SpringBoot,SpringMVC,Mybatis）
 * 非常适合需要快速敏捷业务开发的，执行异常快速，适合低功耗电脑（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
-* 始于Spring ，终将归于Go  敏捷开发之时，大道至简
+* 如果您是netflix spring cloud使用者，那么在（架构上）会非常熟悉此项目。 始于Spring ，终将归于Go  敏捷开发之时，大道至简
 
 ### 谈特性（足以应付大部分互联网服务端应用）
 + 秒启动（完成项目扫描,bean注入，总耗时小于1秒内）内存占用低于20MB
