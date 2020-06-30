@@ -7,7 +7,7 @@
     <!--logic_undelete 逻辑删除 未删除字段-->
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_admin_user">
-        <id column="id" property="id"/>
+        <id column="id" langType="id"/>
         <result column="phone" property="phone" langType="string"/>
         <result column="pwd" property="pwd" langType="string"/>
         <result column="enable" property="enable" langType="int"/>

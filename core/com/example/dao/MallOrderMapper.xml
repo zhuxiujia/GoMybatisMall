@@ -7,7 +7,7 @@
     <!--logic_undelete 逻辑删除 未删除字段-->
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_mall_order">
-        <id column="id" property="id"/>
+        <id column="id" langType="id"/>
         <result column="user_id" property="user_id" langType="string"/>
         <result column="receive_name" property="receive_name" langType="string"/>
         <result column="receive_phone" property="receive_phone" langType="string"/>
