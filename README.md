@@ -1,14 +1,18 @@
 # GoMybatisMall
 GoMybatis based  mall project
 
-基于 ![GoMybatis](https://github.com/zhuxiujia/GoMybatis) 的 微服务商城，唯一一款符合企业开发规范，又满足高并发性能的 示例项目
+基于 [GoMybatis](https://github.com/zhuxiujia/GoMybatis) 的 go语言 微服务商城，国内唯一一款满足使用spring一般企业开发规范，满足高并发，微服务项目
 
 注意：本项目架构拷贝自生产环境源码的改版，经过生产环境检验！
 
 * 适用于给 初学GoMybatis开发者作为 示例或参考用或者快速开发一个GoMybatis项目.
 * 适用于Java服务端开发者学习适用go项目（jvm开发者一般都是公司性质，注重扩展性和简单化，适用于习惯SSM组合的开发者，即SpringBoot,SpringMVC,Mybatis）
-* 非常适合需要快速敏捷业务开发的，执行异常快速，适合低功耗电脑（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
-* 如果您是netflix spring cloud使用者，那么在（架构上）会非常熟悉此项目。 始于Spring ， 敏捷开发之时，大道至简
+* 非常适合需要快速敏捷业务开发的(哪怕是需求变化快速的外包后台项目，基于它 改起来 也是游刃有余)，执行异常快速，适合低功耗电脑（例如笔记本），go本身写test和benchamrk简单，利于测试，压测
+
+
+* 查看此项目源码的前提必须了解并熟悉微服务开发。
+* 如果您不了解微服务组成部分，可以参考https://www.zhihu.com/question/65502802  以及阅读Spring Cloud(仅供参考，是目前Java系企业中最官方最常用的微服务框架)    https://www.springcloud.cc/
+* 如果您已是netflix spring cloud使用者，那么在（架构上）会非常熟悉此项目。 始于Spring ， 敏捷开发之时，大道至简
 
 ### 谈特性（足以应付大部分互联网服务端应用）
 + 秒启动（完成项目扫描,bean注入，总耗时小于1秒内）内存占用低于20MB
@@ -37,9 +41,9 @@ GoMybatis based  mall project
 * 必须的库
 + log（日志推荐使用golang官方（官方最稳定，其他库太重，本项目不赞成引入），仅写入到静态文件）
 + consul(服务发现，consul是支持spring cloud的go语言分布式服务发现) 
-+ easy_mvc(https://github.com/zhuxiujia/easy_mvc) （拟mvc设计）
-+ easyrpc(https://github.com/zhuxiujia/easyrpc) （封装定义,支持事务传播，基于go官方rpc库封装，兼容性也好）
-+ easyrpc_discovery(https://github.com/zhuxiujia/easyrpc_discovery) （微服务发现）
++ [easy_mvc](https://github.com/zhuxiujia/easy_mvc) （拟mvc设计）
++ [easyrpc](https://github.com/zhuxiujia/easyrpc) （封装定义,支持事务传播，基于go官方rpc库封装，兼容性也好）
++ [easyrpc_discovery](https://github.com/zhuxiujia/easyrpc_discovery) （微服务发现）
 + GoMybatis 
 + Mysql5.7
 + redis
@@ -72,17 +76,17 @@ GoMybatis based  mall project
 go mod download
 ```
 ### 谈运行和debug（当然是每次都小于1秒内启动完毕，反观spring cloud那缓慢的启动时间.....）
-+  下载并且安装GoLand(https://www.jetbrains.com/go/) IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
-+  阅读readme.md文件
-+  1打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
-+  2打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
++  下载并且安装[GoLand](https://www.jetbrains.com/go/)   IDE自行激活(建议使用GoLand，如果你对VSCode非常熟悉也行)
++  0 使用GoLand git clone 项目，阅读里面的readme.md文件
++  1 打开discovery目录，选择你的系统 解压对应的 consul 可执行文件(PS consul其实也是开源go程序，这里是下载编译好的)，然后 使用右键执行脚本run_linux.sh 或者 windows.bat (goland 需要安装插件)
++  2 打开app/main/App.go 找到main方法 点击绿色按钮执行(即可看到接口以及swagger完美启动)，或者 go run App.go
 ```go
 2020/04/06 02:32:34 [easy_mvc] swagger ui yaml config on :http://127.0.0.1:8000/doc
 2020/04/06 02:32:34 [easy_mvc] swagger ui web start on :http://127.0.0.1:8000/swagger
 ```
 ![Image text](swagger.png)
-+  3打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
-+  在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
++  3 打开core/main/CoreService.go 找到main方法 点击绿色按钮执行，或者 go run CoreService.go 
++  4 在这之后，可以在consul后台查看到启动的微服务 (http://127.0.0.1:8500/)
 ![Image text](consul_img.png)
 +  现在也可以访问接口地址  http://127.0.0.1:8000/
 +  例如访问验证码接口 http://127.0.0.1:8000/api/captcha  即可返回
