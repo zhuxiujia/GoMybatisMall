@@ -8,11 +8,11 @@
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_mall_cover_image">
         <id column="id" langType="id"/>
-        <result column="img" property="img" langType="string"/>
-        <result column="sku_id" property="sku_id" langType="string"/>
-        <result column="version" property="version" langType="int" version_enable="true"/>
-        <result column="create_time" property="create_time" langType="Time"/>
-        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+        <result column="img"  langType="string"/>
+        <result column="sku_id"  langType="string"/>
+        <result column="version"  langType="int" version_enable="true"/>
+        <result column="create_time"  langType="Time"/>
+        <result column="delete_flag"  langType="int" logic_enable="true" logic_undelete="1"
                 logic_deleted="0"/>
     </resultMap>
     <insertTemplete></insertTemplete>

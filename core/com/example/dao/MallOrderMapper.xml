@@ -8,24 +8,24 @@
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_mall_order">
         <id column="id" langType="id"/>
-        <result column="user_id" property="user_id" langType="string"/>
-        <result column="receive_name" property="receive_name" langType="string"/>
-        <result column="receive_phone" property="receive_phone" langType="string"/>
-        <result column="receive_address" property="receive_address" langType="string"/>
-        <result column="sku_id" property="sku_id" langType="string"/>
-        <result column="sku_num" property="sku_num" langType="int"/>
-        <result column="sku_specification_id" property="sku_specification_id" langType="string"/>
-        <result column="express_num" property="express_num" langType="string"/>
-        <result column="express_name" property="express_name" langType="string"/>
-        <result column="order_amount" property="order_amount" langType="int"/>
-        <result column="status" property="status" langType="int"/>
-        <result column="pay_link" property="pay_link" langType="string"/>
-        <result column="pay_type" property="pay_type" langType="string"/>
-        <result column="remark" property="remark" langType="string"/>
+        <result column="user_id"  langType="string"/>
+        <result column="receive_name"  langType="string"/>
+        <result column="receive_phone"  langType="string"/>
+        <result column="receive_address"  langType="string"/>
+        <result column="sku_id"  langType="string"/>
+        <result column="sku_num"  langType="int"/>
+        <result column="sku_specification_id"  langType="string"/>
+        <result column="express_num"  langType="string"/>
+        <result column="express_name"  langType="string"/>
+        <result column="order_amount"  langType="int"/>
+        <result column="status"  langType="int"/>
+        <result column="pay_link"  langType="string"/>
+        <result column="pay_type"  langType="string"/>
+        <result column="remark"  langType="string"/>
 
-        <result column="version" property="version" langType="int" version_enable="true"/>
-        <result column="create_time" property="create_time" langType="Time"/>
-        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+        <result column="version"  langType="int" version_enable="true"/>
+        <result column="create_time"  langType="Time"/>
+        <result column="delete_flag"  langType="int" logic_enable="true" logic_undelete="1"
                 logic_deleted="0"/>
     </resultMap>
     <insertTemplete></insertTemplete>

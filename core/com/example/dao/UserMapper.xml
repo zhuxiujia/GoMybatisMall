@@ -8,23 +8,23 @@
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_user">
         <id column="id" langType="id"/>
-        <result column="phone" property="phone" langType="string"/>
-        <result column="password" property="password" langType="string"/>
-        <result column="realname" property="realname" langType="string"/>
-        <result column="invitation_code" property="invitation_code" langType="string"/>
-        <result column="ghost" property="ghost" langType="int"/>
-        <result column="today_sign_in" property="today_sign_in" langType="int"/>
-        <result column="client_type" property="client_type" langType="int"/>
-        <result column="address" property="address" langType="string"/>
-        <result column="def_address_id" property="def_address_id" langType="string"/>
-        <result column="avatar" property="avatar" langType="string"/>
+        <result column="phone"  langType="string"/>
+        <result column="password"  langType="string"/>
+        <result column="realname"  langType="string"/>
+        <result column="invitation_code"  langType="string"/>
+        <result column="ghost"  langType="int"/>
+        <result column="today_sign_in"  langType="int"/>
+        <result column="client_type"  langType="int"/>
+        <result column="address"  langType="string"/>
+        <result column="def_address_id"  langType="string"/>
+        <result column="avatar"  langType="string"/>
 
-        <result column="channel" property="channel" langType="string"/>
-        <result column="inviter_code" property="inviter_code" langType="string"/>
+        <result column="channel"  langType="string"/>
+        <result column="inviter_code"  langType="string"/>
 
-        <result column="version" property="version" langType="int" version_enable="true"/>
-        <result column="create_time" property="create_time" langType="time.Time"/>
-        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+        <result column="version"  langType="int" version_enable="true"/>
+        <result column="create_time"  langType="time.Time"/>
+        <result column="delete_flag"  langType="int" logic_enable="true" logic_undelete="1"
                 logic_deleted="0"/>
     </resultMap>
 

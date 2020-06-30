@@ -8,18 +8,18 @@
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_admin_user">
         <id column="id" langType="id"/>
-        <result column="phone" property="phone" langType="string"/>
-        <result column="pwd" property="pwd" langType="string"/>
-        <result column="enable" property="enable" langType="int"/>
+        <result column="phone"  langType="string"/>
+        <result column="pwd"  langType="string"/>
+        <result column="enable"  langType="int"/>
 
-        <result column="real_name" property="real_name" langType="string"/>
-        <result column="remark" property="remark" langType="string"/>
-        <result column="role_ids" property="role_ids" langType="string" />
+        <result column="real_name"  langType="string"/>
+        <result column="remark"  langType="string"/>
+        <result column="role_ids"  langType="string" />
 
-        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1"
+        <result column="delete_flag"  langType="int" logic_enable="true" logic_undelete="1"
                 logic_deleted="0"/>
-        <result column="create_time" property="create_time" langType="Time"/>
-        <result column="version" property="version" langType="int" version_enable="true"/>
+        <result column="create_time"  langType="Time"/>
+        <result column="version"  langType="int" version_enable="true"/>
     </resultMap>
 
     <insertTemplete></insertTemplete>

@@ -8,13 +8,13 @@
     <!--version_enable 乐观锁版本字段,支持int,int8,int16,int32,int64-->
     <resultMap id="BaseResultMap" tables="biz_property">
         <id column="id" langType="id"/>
-        <result column="user_id" property="user_id" langType="string"/>
-        <result column="integral" property="integral" langType="int"/>
-        <result column="amount" property="amount" langType="int"/>
+        <result column="user_id"  langType="string"/>
+        <result column="integral"  langType="int"/>
+        <result column="amount"  langType="int"/>
 
-        <result column="version" property="version" langType="int" version_enable="true"/>
-        <result column="create_time" property="create_time" langType="time.Time"/>
-        <result column="delete_flag" property="delete_flag" langType="int" logic_enable="true" logic_undelete="1" logic_deleted="0"/>
+        <result column="version"  langType="int" version_enable="true"/>
+        <result column="create_time"  langType="time.Time"/>
+        <result column="delete_flag"  langType="int" logic_enable="true" logic_undelete="1" logic_deleted="0"/>
     </resultMap>
 
     <insertTemplete/>
