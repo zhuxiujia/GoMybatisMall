@@ -12,7 +12,7 @@ require (
 	github.com/rakyll/statik v0.1.7
 	github.com/robfig/cron v1.2.0
 	github.com/shopspring/decimal v0.0.0-20200227202807-02e2044944cc
-	github.com/zhuxiujia/GoMybatis v6.5.0+incompatible
+	github.com/zhuxiujia/GoMybatis v6.5.1+incompatible
 	github.com/zhuxiujia/captcha v0.0.0-20180909162151-9332bf9ac177
 	github.com/zhuxiujia/crypto v0.0.0
 	github.com/zhuxiujia/easy_mvc v1.0.1
